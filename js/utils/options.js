@@ -2,7 +2,7 @@
 
 let options = {}
 
-let notations = ['Standard', 'Scientific', 'Mixed Scientific', 'Engineering', 'Mixed Engineering', 'Hyper-E', 'Mass Unit', 'Prism SQ', 'Hex', 'Test']
+let notations = ['Standard', 'Scientific']
 
 
 function getStartOptions() {
