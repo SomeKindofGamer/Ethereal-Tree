@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "The Ethereal Tree",
-	id: "mymod",
-	author: "nobody",
+	id: "Ethereal",
+	author: "Shibified (Shoober)",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -13,7 +13,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
+	num: "0.0.1",
 	name: "Ethereal Tree",
 }
 
@@ -41,10 +41,14 @@ function canGenPoints(){
 function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
+		let gain = new Decimal(1)
 
-	let gain = new Decimal(1)
+		gain = gain.mul(buyableEffect('main', 11))
+		
 	return gain
 }
+
+if (hasUpgrade('main', 11)) gain = gain.times(2)
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {

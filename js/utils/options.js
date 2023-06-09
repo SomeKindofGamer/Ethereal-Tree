@@ -2,6 +2,9 @@
 
 let options = {}
 
+let notations = ['Standard', 'Scientific', 'Mixed Scientific', 'Engineering', 'Mixed Engineering', 'Hyper-E', 'Mass Unit', 'Prism SQ', 'Hex', 'Test']
+
+
 function getStartOptions() {
 	return {
 		autosave: true,
@@ -15,6 +18,11 @@ function getStartOptions() {
 		oldStyle: false,
 		tooltipForcing: true,
 	}
+}
+
+function changeNotation() {
+	player.notation = notations[(notations.indexOf(player.notation) + 1) % notations.length]
+	needCanvasUpdate = true;
 }
 
 function toggleOpt(name) {
